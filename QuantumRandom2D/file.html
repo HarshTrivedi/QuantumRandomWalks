@@ -1,0 +1,37 @@
+
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+
+    <script src="jsapi.js"></script>
+    <script src="chartkick.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+  </head>
+  <body style="padding-top: 50px">
+
+    <div class="container" style="padding-left: 0px ; padding-right: 0px ; padding-right: 5px ; padding-left: 5px ;">
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h1 class="panel-title text-center">Quantum Random Walk Simulation</h1>
+          </div>
+          <div class="panel-body">
+            <div id="chart-1" style="height: 600px; text-align: center; color: #999; line-height: 600px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
+  new Chartkick.LineChart("chart-1", [["p(-10)",0.0009765624999999985],["p(-8)",0.04882812499999993],["p(-6)",0.08691406249999986],["p(-4)",0.06249999999999989],["p(-2)",0.05078124999999996],["p(0)",0.07031249999999989],["p(2)",0.0976562499999999],["p(4)",0.06249999999999993],["p(6)",0.4384765624999994],["p(8)",0.08007812499999988],["p(10)",0.0009765624999999985]], {"discrete":true,"width":"1000px","library":{"curveType":"none","pointSize":0,"title":"Probability Distribution of the States in Quantum Random Walk for 1-D after 10 steps ","vAxis":{"title":"state probability"},"hAxis":{"title":"states"}}});
+</script>
+
+          </div>
+          <div class="panel-footer text-center">
+            <b>Coin Used:</b> Hadamard
+            <br>
+            <b>Initial State:</b> | 0 , + >            
+          </div>
+        </div>
+
+    </div>          
+  </body>
+  </html>
+
+  
