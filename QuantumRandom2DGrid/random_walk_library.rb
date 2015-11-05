@@ -91,7 +91,7 @@ class RandomWalk
 		end
 
 		@current_state = new_superimposed_state
-		plot_probability_distribution()
+		# plot_probability_distribution()
 		@steps_taken += 1
 	end
 
@@ -118,7 +118,10 @@ class RandomWalk
 	def plot_probability_distribution
 
 		probabilities_hash = Hash.new(0)
-		@graph.dvertices.each{ |dvertex| dvertex.node.color  = '#FFFFFF' ; dvertex.node.label = dvertex.id.to_s }
+		@graph.dvertices.each{ |dvertex| 
+			dvertex.node.color  = '#FFFFFF' ; 
+			# dvertex.node.label = dvertex.id.to_s 
+		}
 
 		current_state.each do |state|
 			probabilities_hash[state.position] += (state.amplitude.magnitude**2)
@@ -126,8 +129,8 @@ class RandomWalk
 
 		max_probability = probabilities_hash.values.max	
 		probabilities_hash.each do |position, probability|
-			position.set_probabilistic_color( probability , max_probability)
-			position.set_probabilistic_label( probability )			
+			position.set_probabilistic_color( probability , probabilities_hash.values )
+			# position.set_probabilistic_label( probability )			
 			# ap "#{position.id} -> #{probability}"
 		end
 	end
@@ -185,10 +188,10 @@ class MatrixGenerator
 			return matrix
 		elsif(n == 4)
 			matrix = Matrix[
-						[  Complex(1/2) ,  Complex(1/2)  ,  Complex(1/2) , Complex(1/2) ],
-						[ -Complex(1/2) ,  Complex(1/2)  , -Complex(1/2) , Complex(1/2) ],
-						[ -Complex(1/2) , -Complex(1/2)  ,  Complex(1/2) , Complex(1/2) ],
-						[  Complex(1/2) , -Complex(1/2)  , -Complex(1/2) , Complex(1/2) ]
+						[  Complex(1.0/2) ,   Complex(1.0/2)  ,  Complex(1.0/2) ,  Complex(1.0/2) ],
+						[  Complex(1.0/2) ,  -Complex(1.0/2)  ,  Complex(1.0/2) , -Complex(1.0/2) ],
+						[  Complex(1.0/2) ,   Complex(1.0/2)  , -Complex(1.0/2) , -Complex(1.0/2) ],
+						[  Complex(1.0/2) ,  -Complex(1.0/2)  , -Complex(1.0/2) ,  Complex(1.0/2) ]
 					]
 			return matrix
 		end
