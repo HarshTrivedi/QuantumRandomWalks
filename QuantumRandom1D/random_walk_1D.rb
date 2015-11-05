@@ -25,7 +25,7 @@ balanced_state = [ State.new(0 , :plus , Complex( (1/Math::sqrt(2)) , 0 ) ) , St
 
 walk = RandomWalk.new( balanced_state , hadamard_gate )
 
-150.times { walk.step }
+100.times { walk.step }
 
 walk.plot_probability_distribution
 
